@@ -106,7 +106,7 @@ body {
 
 p,
 h1,
-h2,
+/* h2, */
 h3,
 h4,
 h5,
@@ -120,12 +120,22 @@ h2 {
 }
 
 .soundslike {
-  padding: 1em 0;
+  padding-top: 1em;
+  margin-bottom: 0;
 }
 
 .soundslike:before {
   content: "🗣️";
   margin-right: 0.25em;
+}
+
+.soundslike + .soundslike {
+  padding-top: 0;
+  margin-bottom: 1em;
+}
+
+.soundslikereading:before {
+  content: "📖";
 }
 
 .spoken {
@@ -134,8 +144,18 @@ h2 {
   font-size: 1.25em;
 }
 
-label {
+label,
+input {
   display: block;
+}
+
+[aria-invalid="true"] {
+  border: solid 3px #900;
+}
+
+.error-message {
+  display: block;
+  color: #900;
 }
 
 /* ==========================================================================

@@ -15,31 +15,42 @@
   <body>
     <h1>What does it sound like to a screen reader?</h1>
 
-    <p>Here are some form-related HTML bits.</p><h2>Label and input, no for or id attributes</h2>
+    <p>Here are some form-related HTML bits.</p><h2>Input wrapped in label</h2>
 
     <div>
-      <p><label>Username</label></p>
-<input type="text">
-
-    </div>
-
-    <p>Sounds like: "edit text".</p><h2>Input wrapped in label</h2>
-
-    <div>
-      <label>
+      
+<label>
     Username<br/>
     <input type="text">
 </label>
 
     </div>
 
-    <p>Sounds like: "Username, edit text".</p><h2>Label and input, with for and id attributes</h2>
+    <p class="soundslike">
+      Sounds like: <span class="spoken">Username, edit text</span>.
+    </p><h2>Label and input, no for or id attributes</h2>
 
     <div>
-      <p><label for="id-003">Username</label></p>
+      
+<label>Username</label>
+
+<input type="text">
+
+    </div>
+
+    <p class="soundslike">
+      Sounds like: <span class="spoken">edit text</span>.
+    </p><h2>Label and input, with for and id attributes</h2>
+
+    <div>
+      
+<label for="id-003">Username</label>
+
 <input type="text" id="id-003">
 
     </div>
 
-    <p>Sounds like: "Username, edit text".</p></body>
+    <p class="soundslike">
+      Sounds like: <span class="spoken">Username, edit text</span>.
+    </p></body>
 </html>

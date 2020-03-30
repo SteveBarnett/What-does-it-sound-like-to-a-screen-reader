@@ -6,6 +6,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
 
     <meta name="theme-color" content="#fafafa" />
@@ -14,7 +15,15 @@
   <body>
     <h1>What does it sound like to a screen reader?</h1>
 
-    <p>Here are some form-related HTML bits.</p><h2>Input wrapped in label</h2>
+    <p>Here are some form-related HTML bits.</p><h2>Label and input, no for or id attributes</h2>
+
+    <div>
+      <p><label>Username</label></p>
+<input type="text">
+
+    </div>
+
+    <p>Sounds like: "edit text".</p><h2>Input wrapped in label</h2>
 
     <div>
       <label>
@@ -24,15 +33,7 @@
 
     </div>
 
-    <p>Sounds like: "Username, input".</p><h2>Label and input, no for or id attributes</h2>
-
-    <div>
-      <p><label>Username</label></p>
-<input type="text">
-
-    </div>
-
-    <p>Sounds like: "input".</p><h2>Label and input, with for and id attributes</h2>
+    <p>Sounds like: "Username, edit text".</p><h2>Label and input, with for and id attributes</h2>
 
     <div>
       <p><label for="id-003">Username</label></p>

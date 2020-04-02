@@ -16,93 +16,116 @@
     <h1>What does it sound like to a screen reader?</h1>
 
     <p>
-      Here are some examples of a label and an input in various states, and what
-      they sound like to a screen reader user.
+      The exact words are lifted from VoiceOver on Mac OS, but are good for a
+      general guide.
     </p>
 
-    <p>
-      The exact words are lifted from VoiceOver on Mac OS, but are good for a
-      general guide. A full stop "." denote a slightly longer pause by the
-      screen reader.
-    </p><h2 id="heading-001-input-wrapped-in-a-label">
-      <code>input</code> wrapped in <code>label</code></h2>
+    <table>
+      <caption>
+        Here are some examples of a label and an input in various states, and
+        what they sound like to a screen reader user.
+      </caption>
 
-    <div>
-      
+      <thead>
+        <tr>
+          <th scope="col">
+            What it is
+          </th>
+          <th scope="col">
+            What it looks like
+          </th>
+          <th scope="col">
+            What it sounds like
+          </th>
+        </tr>
+      </thead><tr>
+        <th scope="row" id="heading-001-input-wrapped-in-a-label">
+          <code>input</code> wrapped in <code>label</code>
+        </th>
+
+        <td>
+          
 <label>
   Username<br />
   <input type="text" />
 </label>
 
-    </div>
+        </td>
 
-    <p class="soundslike">
-      Sounds like:
-      <span class="spoken">Username, edit text.</span>
-    </p><h2 id="heading-002-no-for-and-id">
-      No <code>for</code> and <code>id</code> attributes-
-      <span class="naughty">don't do this!</span></h2>
+        <td class="spoken">
+          Username, edit text.
+        </td>
+      </tr><tr>
+        <th scope="row" id="heading-002-no-for-and-id">
+          No <code>for</code> and <code>id</code> attributes
+        </th>
 
-    <div>
-      
+        <td>
+          
 <label>Username</label>
 
 <input type="text">
 
-    </div>
+        </td>
 
-    <p class="soundslike naughty">
-      Sounds like:
-      <span class="spoken">edit text.</span>
-    </p><h2 id="heading-003-linked-for-and-id">
-      With <code>for</code> and <code>id</code> attributes</h2>
+        <td class="spoken">
+          edit text.
+        </td>
+      </tr><tr>
+        <th scope="row" id="heading-003-linked-for-and-id">
+          With <code>for</code> and <code>id</code> attributes
+        </th>
 
-    <div>
-      
+        <td>
+          
 <label for="id-003">Username</label>
 
 <input type="text" id="id-003">
 
-    </div>
+        </td>
 
-    <p class="soundslike">
-      Sounds like:
-      <span class="spoken">Username, edit text.</span>
-    </p><h2 id="heading-004-required">
-      Required with <code>aria-required="true"</code></h2>
+        <td class="spoken">
+          Username, edit text.
+        </td>
+      </tr><tr>
+        <th scope="row" id="heading-004-required">
+          Required with <code>aria-required="true"</code>
+        </th>
 
-    <div>
-      
+        <td>
+          
 <label for="id-004">Username</label>
 
 <input type="text" id="id-004" aria-required="true">
 
-Note: adding `required` marks the field as invalid in some screen readers.
+        </td>
 
-    </div>
+        <td class="spoken">
+          Username, required, edit text.
+        </td>
+      </tr><tr>
+        <th scope="row" id="heading-005-required-error-state">
+          Required with <code>aria-required="true"</code>, error state using <code>aria-invalid</code>
+        </th>
 
-    <p class="soundslike">
-      Sounds like:
-      <span class="spoken">Username, required, edit text.</span>
-    </p><h2 id="heading-005-required-error-state">
-      Required with <code>aria-required="true"</code>, error state using <code>aria-invalid</code></h2>
-
-    <div>
-      
+        <td>
+          
 <label for="id-005">Username</label>
 
 <input type="text" id="id-005" aria-required="true" required aria-invalid="true">
 
-    </div>
+        </td>
 
-    <p class="soundslike">
-      Sounds like:
-      <span class="spoken">Username, required, invalid data, edit text.</span>
-    </p><h2 id="heading-006-required-error-message">
-      Error message in <code>label</code></h2>
+        <td class="spoken">
+          Username, required, invalid data, edit text.
+        </td>
+      </tr><tr>
+        <th scope="row" id="heading-006-required-error-message">
+          Error message in <code>label</code>
+        </th>
 
-    <div>
-      
+        <td>
+          
 <label for="id-006">
     Username
     <span class="error-message">Please enter your username.</span>
@@ -110,34 +133,18 @@ Note: adding `required` marks the field as invalid in some screen readers.
 
 <input type="text" id="id-006" aria-invalid="true" />
 
-    </div>
+        </td>
 
-    <p class="soundslike">
-      Sounds like:
-      <span class="spoken">Username, Please enter your username, edit text, invalid data.</span>
-    </p><h2 id="heading-008-error-message-after">
-      Error message after <code>input</code>, linked with <code>aria-describedby</code></h2>
+        <td class="spoken">
+          Username, Please enter your username, edit text, invalid data.
+        </td>
+      </tr><tr>
+        <th scope="row" id="heading-007-error-message-before">
+          Error message before <code>input</code>, linked with <code>aria-describedby</code>
+        </th>
 
-    <div>
-      
-<label for="id-007">
-    Username
-</label>
-
-<input type="text" id="id-007" aria-describedby="id-007-2" aria-invalid="true" />
-
-<span class="error-message" id="id-007-2">Please enter your username.</span>
-
-    </div>
-
-    <p class="soundslike">
-      Sounds like:
-      <span class="spoken">Username, edit text, invalid data. (pause) Please enter your username.</span>
-    </p><h2 id="heading-007-error-message-before">
-      Error message before <code>input</code>, linked with <code>aria-describedby</code></h2>
-
-    <div>
-      
+        <td>
+          
 <label for="id-007">
     Username
 </label>
@@ -146,10 +153,31 @@ Note: adding `required` marks the field as invalid in some screen readers.
 
 <input type="text" id="id-007" aria-describedby="id-007-2" aria-invalid="true" />
 
-    </div>
+        </td>
 
-    <p class="soundslike">
-      Sounds like:
-      <span class="spoken">Username, edit text. (pause) Please enter your username.</span>
-    </p></body>
+        <td class="spoken">
+          Username, invalid data, edit text. (pause) Please enter your username.
+        </td>
+      </tr><tr>
+        <th scope="row" id="heading-008-error-message-after">
+          Error message after <code>input</code>, linked with <code>aria-describedby</code>
+        </th>
+
+        <td>
+          
+<label for="id-008">
+    Username
+</label>
+
+<input type="text" id="id-008" aria-describedby="id-008-2" aria-invalid="true" />
+
+<span class="error-message" id="id-008-2">Please enter your username.</span>
+
+        </td>
+
+        <td class="spoken">
+          Username, invalid data, edit text. (pause) Please enter your username.
+        </td>
+      </tr></table>
+  </body>
 </html>

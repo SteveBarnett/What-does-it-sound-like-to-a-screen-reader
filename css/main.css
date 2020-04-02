@@ -1,141 +1,332 @@
-<!DOCTYPE html>
-<html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8" />
-    <title>What does it sound like to a screen reader?</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/main.css" />
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
 
-    <meta name="theme-color" content="#fafafa" />
-  </head>
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
 
-  <body>
-    <h1>What does it sound like to a screen reader?</h1>
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
 
-    <p>Here are some form-related HTML bits.</p><h2 id="heading-001-input-wrapped-in-a-label">Input wrapped in label</h2>
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
 
-    <div>
-      
-<label>
-    Username<br/>
-    <input type="text">
-</label>
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
 
-    </div>
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
 
-    <p class="soundslike">
-      On focus, sounds like:
-      <span class="spoken">Username, edit text</span>
-    </p><h2 id="heading-002-label-and-input-not-linked">Label and input, no for or id attributes</h2>
+/*
+ * A better looking default horizontal rule
+ */
 
-    <div>
-      
-<label>Username</label>
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
 
-<input type="text">
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
 
-    </div>
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
 
-    <p class="soundslike">
-      On focus, sounds like:
-      <span class="spoken">edit text</span>
-    </p><h2 id="heading-003-linked-for-and-input">Label and input, with for and id attributes</h2>
+/*
+ * Remove default fieldset styles.
+ */
 
-    <div>
-      
-<label for="id-003">Username</label>
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
 
-<input type="text" id="id-003">
+/*
+ * Allow only vertical resizing of textareas.
+ */
 
-    </div>
+textarea {
+  resize: vertical;
+}
 
-    <p class="soundslike">
-      On focus, sounds like:
-      <span class="spoken">Username, edit text</span>
-    </p><h2 id="heading-004-label-and-input-required">Label and input, required</h2>
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
 
-    <div>
-      
-<label for="id-004">Username</label>
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
 
-<input type="text" id="id-004" aria-required="true" required>
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
 
-    </div>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 0.5em;
+}
 
-    <p class="soundslike">
-      On focus, sounds like:
-      <span class="spoken">Username, required, edit text</span>
-    </p><h2 id="heading-005-label-and-input-required-error-state">Label and input, required, error state</h2>
+p,
+h1,
+/* h2, */
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
 
-    <div>
-      
-<label for="id-005">Username</label>
+h2 {
+  padding-top: 0.5em;
+  border-top: 1px solid #ccc;
+}
 
-<input type="text" id="id-005" aria-required="true" required aria-invalid="true">
+.soundslike {
+  padding-top: 1em;
+  margin-bottom: 0;
+}
 
-    </div>
+.soundslike:before {
+  content: "🗣️";
+  margin-right: 0.25em;
+}
 
-    <p class="soundslike">
-      On focus, sounds like:
-      <span class="spoken">Username, required, invalid data, edit text</span>
-    </p><h2 id="heading-006-label-and-input-required-error-message">Label and input, error message in label</h2>
+.soundslike + .soundslike {
+  padding-top: 0;
+  margin-bottom: 1em;
+}
 
-    <div>
-      
-<label for="id-006">
-    Username
-    <span class="error-message">Please enter your username.</span>
-</label>
+.soundslike.naughty:before {
+  content: "😭";
+}
 
-<input type="text" id="id-006" />
+.spoken {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.25em;
+}
 
-    </div>
+label,
+input {
+  display: block;
+}
 
-    <p class="soundslike">
-      On focus, sounds like:
-      <span class="spoken">Username, Please enter your username, edit text</span>
-    </p><h2 id="heading-007-label-and-input-error-message-after">Label and input, error message after input, linked with aria-describedby</h2>
+[aria-invalid="true"] {
+  border: solid 3px #900;
+}
 
-    <div>
-      
-<label for="id-007">
-    Username
-</label>
+.error-message {
+  display: block;
+  color: #900;
+}
 
-<input type="text" id="id-007" aria-describedby="id-007-2" />
+h2 .naughty {
+  color: #900;
+}
 
-<span class="error-message" id="id-007-2">Please enter your username.</span>
+code {
+  color: #666;
+}
 
-    </div>
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
 
-    <p class="soundslike">
-      On focus, sounds like:
-      <span class="spoken">Username, edit text. (pause) Please enter your username.</span>
-    </p><p class="soundslike soundslikereading">
-      In reading mode, sounds like:
-      <span class="spoken">Username, Please enter your username, Username, edit text. (pause) Please enter your username.</span>
-    </p><h2 id="heading-008-label-and-input-error-message-before">Label and input, error message before input, linked with aria-describedby</h2>
+/*
+ * Hide visually and from screen readers
+ */
 
-    <div>
-      
-<label for="id-007">
-    Username
-</label>
+.hidden {
+  display: none !important;
+}
 
-<span class="error-message" id="id-007-2">Please enter your username.</span>
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
 
-<input type="text" id="id-007" aria-describedby="id-007-2" />
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
 
-    </div>
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
 
-    <p class="soundslike">
-      On focus, sounds like:
-      <span class="spoken">Username, edit text. (pause) Please enter your username.</span>
-    </p><p class="soundslike soundslikereading">
-      In reading mode, sounds like:
-      <span class="spoken">Username. Username, edit text. (pause) Please enter your username.</span>
-    </p></body>
-</html>
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

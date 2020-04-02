@@ -119,28 +119,8 @@ h2 {
   border-top: 1px solid #ccc;
 }
 
-.soundslike {
-  padding-top: 1em;
-  margin-bottom: 0;
-}
-
-.soundslike:before {
-  content: "🗣️";
-  margin-right: 0.25em;
-}
-
-.soundslike + .soundslike {
-  padding-top: 0;
-  margin-bottom: 1em;
-}
-
-.soundslike.naughty:before {
-  content: "😭";
-}
-
 .spoken {
   font-family: monospace;
-  font-weight: bold;
   font-size: 1.25em;
 }
 
@@ -164,6 +144,25 @@ h2 .naughty {
 
 code {
   color: #666;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+caption,
+td,
+th {
+  padding-bottom: 2em;
+}
+
+td {
+  padding-right: 1em;
+}
+
+thead {
+  text-transform: uppercase;
 }
 
 /* ==========================================================================
